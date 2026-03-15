@@ -1,4 +1,15 @@
-<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+ document.body.classList.add("dark");
+
+ const btn = document.querySelector(".theme-btn");
+ if(btn) btn.textContent = "☀";
+}
+
+});
 
 function toggleDark(){
 
@@ -16,13 +27,6 @@ btn.textContent = "☾";
 }
 
 }
-
-/* Load saved theme */
- if(localStorage.getItem("theme")==="dark"){
-document.body.classList.add("dark");
-document.querySelector(".theme-btn").textContent="☀";
-}
-
 
 const sections=document.querySelectorAll("section");
 
@@ -52,10 +56,12 @@ window.addEventListener("scroll",()=>{
 
 const nav=document.querySelector("nav");
 
+if(nav){
 if(window.scrollY>50){
 nav.classList.add("scrolled");
 }else{
 nav.classList.remove("scrolled");
+}
 }
 
 });
@@ -65,7 +71,11 @@ let scrollTop = document.documentElement.scrollTop;
 let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 let scrolled = (scrollTop / height) * 100;
 
-document.querySelector(".scroll-progress").style.width = scrolled + "%";
+const bar=document.querySelector(".scroll-progress");
+if(bar){
+bar.style.width = scrolled + "%";
+}
+
 });
 
 function toggleMenu(){
@@ -73,16 +83,16 @@ function toggleMenu(){
 const drawer = document.getElementById("navDrawer");
 const overlay = document.getElementById("menuOverlay");
 
+if(drawer && overlay){
 drawer.classList.toggle("open");
 overlay.classList.toggle("open");
+}
 
 }
 
 document.querySelectorAll(".nav-drawer a").forEach(link=>{
 link.addEventListener("click",()=>{
-document.getElementById("navDrawer").classList.remove("open");
-document.getElementById("menuOverlay").classList.remove("open");
+document.getElementById("navDrawer")?.classList.remove("open");
+document.getElementById("menuOverlay")?.classList.remove("open");
 });
 });
-
-</script>
