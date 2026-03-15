@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta name="description" content="Poetry, essays, reflections and literary notes by Aashi Malviya.">
+<meta name="keywords" content="Aashi Malviya, poetry, essays, writing, reflections, literature, Hindi poetry, English poetry">
+<meta name="author" content="Aashi Malviya">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aashi Malviya">
+<meta name="twitter:description" content="Writing and reflections.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://aashimalviya.com">
+<meta charset="UTF-8">
+<meta property="og:title" content="Aashi Malviya — Writing & Reflections">
+<meta property="og:description" content="Poetry, essays and reflections.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aashimalviya.com">
+<meta property="og:image" content="https://aashimalviya.com/preview.jpg">
+
+<title>Aashi Malviya — Writing & Reflections</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================
+ROOT COLORS
+========================= */
+
+:root{
+--bg1:#f7f3ed;
+--bg2:#eee6db;
+--text:#26221f;
+--soft:#6c635c;
+--accent:#b8a99a;
+--card:#ffffffc0;
+
+--photo-dim:1;
+--photo-contrast:1;
+}
+
+/* =========================
+DARK MODE
+========================= */
+
+body.dark{
+--bg1:#121212;
+--bg2:#1a1a1a;
+--text:#f1f1f1;
+--soft:#a8a8a8;
+--accent:#c7b7a5;
+--card:#262626;
+
+--photo-dim:0.85;
+--photo-contrast:1.05;
+}
+
+/* =========================
+RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:
+linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)),
+url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+background-color:var(--bg1);
+color:var(--text);
+line-height:1.8;
+
+transition:
+background 0.4s ease,
+color 0.4s ease;
+}
+
+/* DARK MODE TEXTURE */
+
+body.dark{
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+background-color:var(--bg1);
+}
+
+/* =========================
+SCROLL PROGRESS BAR
+========================= */
+
+.scroll-progress{
+position:fixed;
+top:0;
+left:0;
+height:3px;
+width:0%;
+background:var(--accent);
+z-index:2000;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(246,241,234,0.9);
+backdrop-filter:blur(8px);
+border-bottom:1px solid #e4dcd2;
+z-index:1000;
+}
+
+body.dark nav{
+background:#111;
+border-bottom:1px solid #333;
+}
+
+.nav-inner{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0.8rem 1.5rem;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+letter-spacing:0.15em;
+font-size:1rem;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+background:none;
+border:none;
+font-size:1.2rem;
+cursor:pointer;
+color:var(--text);
+}
+
+/* =========================
+NAV DRAWER
+========================= */
+
+.nav-drawer{
+position:fixed;
+top:0;
+right:-280px;
+width:220px;
+height:100vh;
+background:var(--bg1);
+box-shadow:-10px 0 30px rgba(0,0,0,0.1);
+display:flex;
+flex-direction:column;
+padding:5rem 2rem;
+gap:1.3rem;
+transition:0.35s ease;
+z-index:999;
+}
+
+body.dark .nav-drawer{
+background:#1a1a1a;
+}
+
+.nav-drawer.open{
+right:0;
+}
+
+.nav-drawer a{
+text-decoration:none;
+font-size:0.9rem;
+letter-spacing:0.1em;
+color:var(--text);
+}
+
+.nav-drawer a:hover{
+color:var(--accent);
+}
+
+.theme-btn{
+background:none;
+border:none;
+margin-top:1rem;
+cursor:pointer;
+font-size:1rem;
+}
+
+/* DARK MODE BUTTON */
+
+.theme-btn{
+background:none;
+border:none;
+cursor:pointer;
+font-size:1rem;
+color:var(--soft);
+}
+
+.theme-btn:hover{
+color:var(--text);
+}
+
+/* =========================
+LAYOUT
+========================= */
+
+.container{
+max-width:680px;
+margin:auto;
+padding:0 1.5rem;
+}
+
+section{
+padding:8rem 0;
+opacity:0;
+transform:translateY(40px);
+transition:0.8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+section:nth-child(even){
+background:var(--bg2);
+}
+
+section:nth-child(odd){
+background:var(--bg1);
+}
+
+/* =========================
+HERO
+========================= */
+
+header{
+padding-top:9rem;
+padding-bottom:6rem;
+}
+
+.hero-clean{
+max-width:760px;
+margin:auto;
+text-align:center;
+padding:10rem 1.5rem 6rem;
+}
+
+.hero-name{
+font-family:'Cormorant Garamond',serif;
+font-size:3.2rem;
+letter-spacing:0.05em;
+margin-bottom:2.2rem;
+}
+
+.hero-quote{
+font-family:'Cormorant Garamond',serif;
+font-size:1.9rem;
+font-style:italic;
+color:var(--soft);
+line-height:1.7;
+margin-bottom:2.5rem;
+}
+
+.hero-divider{
+width:60px;
+height:1px;
+background:var(--accent);
+margin:2rem auto;
+}
+
+.hero-link{
+text-decoration:none;
+color:var(--text);
+font-size:0.85rem;
+letter-spacing:0.15em;
+text-transform:uppercase;
+border-bottom:1px solid var(--accent);
+padding-bottom:4px;
+transition:0.3s;
+}
+
+.hero-link:hover{
+letter-spacing:0.2em;
+}
+
+
+/* =========================
+HEADINGS
+========================= */
+
+h2{
+font-family:'Cormorant Garamond',serif;
+text-align:center;
+font-size:2.2rem;
+margin-bottom:1rem;
+}
+
+.subtitle{
+text-align:center;
+color:var(--soft);
+margin-bottom:3rem;
+}
+
+/* =========================
+WRITING (clean archive style)
+========================= */
+
+.category{
+margin-bottom:2.8rem;
+}
+
+.category h3{
+font-family:'Cormorant Garamond',serif;
+font-size:1.45rem;
+margin-bottom:0.7rem;
+color:var(--text);
+}
+
+.writing-list{
+list-style:none;
+padding-left:0;
+}
+
+.writing-list li{
+margin:0.7rem 0;
+padding-left:14px;
+border-left:2px solid transparent;
+transition:0.25s ease;
+}
+
+.writing-list a{
+text-decoration:none;
+color:var(--text);
+font-size:1rem;
+letter-spacing:0.01em;
+}
+
+.writing-list li:hover{
+border-left:2px solid var(--accent);
+padding-left:18px;
+}
+
+.writing-list a:hover{
+color:var(--accent);
+}
+
+/* =========================
+FEATURED
+========================= */
+
+.feature-card{
+background:var(--card);
+padding:2rem;
+border-radius:14px;
+text-align:center;
+max-width:600px;
+margin:auto;
+transition:background 0.4s;
+}
+
+.feature-card a{
+text-decoration:none;
+color:var(--text);
+font-family:'Cormorant Garamond',serif;
+font-size:1.3rem;
+}
+
+/* =========================
+PUBLICATIONS
+========================= */
+
+.pub-wrapper{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:1.5rem;
+}
+
+.pub-item{
+background:var(--card);
+border-radius:14px;
+padding:1.2rem 1.6rem;
+transition:background 0.4s, transform 0.25s;
+}
+
+.pub-item:hover{
+transform:translateY(-3px);
+}
+
+.pub-title{
+width:100%;
+background:none;
+border:none;
+text-align:left;
+font-family:'Cormorant Garamond',serif;
+font-size:1.4rem;
+cursor:pointer;
+color:var(--text);
+}
+
+.pub-title:hover{
+color:var(--accent);
+}
+
+.pub-content{
+max-height:0;
+overflow:hidden;
+transition:0.45s ease;
+}
+
+.pub-content.open{
+max-height:500px;
+margin-top:1rem;
+}
+
+.pub-desc{
+color:var(--soft);
+margin-bottom:1rem;
+}
+
+.anthology-list{
+margin-bottom:1rem;
+padding-left:1.2rem;
+}
+
+.pub-images{
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.pub-images img{
+width:140px;
+border-radius:8px;
+box-shadow:0 8px 18px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.pub-images img:hover{
+transform:scale(1.05);
+}
+
+/* =========================
+BOOKSHELF
+========================= */
+
+.books-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:2.5rem;
+max-width:520px;
+margin:3rem auto 0 auto;
+}
+
+.book{
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.book:hover{
+transform:translateY(-6px);
+}
+
+.book img{
+width:115px;
+height:175px;
+object-fit:cover;
+border-radius:6px;
+box-shadow:0 12px 22px rgba(0,0,0,0.18);
+}
+
+.book h4{
+font-family:'Cormorant Garamond',serif;
+margin-top:10px;
+}
+
+.book small{
+display:block;
+color:var(--soft);
+}
+
+.book-quote{
+max-height:0;
+opacity:0;
+overflow:hidden;
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+font-size:0.9rem;
+color:var(--soft);
+transition:0.4s ease;
+}
+
+.book-quote.open{
+max-height:80px;
+opacity:1;
+}
+
+/* =========================
+NOW PAGE
+========================= */
+
+.now-wrapper{
+max-width:650px;
+margin:auto;
+background:var(--card);
+padding:2rem;
+border-radius:14px;
+transition:background 0.4s;
+}
+
+.now-item{
+margin-bottom:1.6rem;
+}
+
+.now-item h3{
+font-family:'Cormorant Garamond',serif;
+margin-bottom:0.4rem;
+}
+
+.now-item p{
+color:var(--soft);
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about-wrapper{
+display:grid;
+grid-template-columns:120px 1fr;
+gap:2.5rem;
+align-items:start;
+}
+
+.about-photo img{
+width:140px;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 14px 28px rgba(0,0,0,0.15);
+}
+
+.about-text{
+max-width:600px;
+text-align:left;
+}
+
+.about-text p{
+margin-bottom:1.5rem;
+}
+
+/* =========================
+PHOTO DARK MODE CONTROL
+========================= */
+
+.hero img,
+.about-photo img,
+.pub-images img,
+.book img{
+filter:brightness(var(--photo-dim)) contrast(var(--photo-contrast));
+transition:0.4s;
+}
+
+/* =========================
+CONNECT
+========================= */
+
+.connect{
+text-align:center;
+}
+
+.connect-links a,
+.footer-links a{
+
+position:relative;
+
+}
+
+.connect-links a::after,
+.footer-links a::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:-2px;
+width:0%;
+height:1px;
+background:var(--accent);
+transition:0.3s;
+
+}
+
+.connect-links a:hover::after,
+.footer-links a:hover::after{
+
+width:100%;
+
+}
+
+.connect-subtitle{
+color:var(--soft);
+margin-bottom:1.8rem;
+}
+
+.connect-links{
+display:flex;
+justify-content:center;
+gap:2rem;
+flex-wrap:wrap;
+font-size:0.9rem;
+}
+
+.connect-links a{
+text-decoration:none;
+color:var(--text);
+border-bottom:1px solid transparent;
+padding-bottom:2px;
+transition:0.3s;
+}
+
+.connect-links a:hover{
+border-bottom:1px solid var(--accent);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+padding:4rem 0;
+text-align:center;
+background:var(--bg2);
+margin-top:4rem;
+}
+
+.footer-inner{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.footer-inner{
+max-width:700px;
+margin:auto;
+text-align:center;
+padding:0 1.5rem;
+}
+
+.footer-name{
+font-family:'Cormorant Garamond',serif;
+font-size:1.4rem;
+margin-bottom:0.3rem;
+}
+
+.footer-tagline{
+color:var(--soft);
+margin-bottom:1.2rem;
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:1.5rem;
+flex-wrap:wrap;
+margin-bottom:1.4rem;
+}
+
+.footer-links a{
+text-decoration:none;
+color:var(--text);
+font-size:0.9rem;
+}
+
+.footer-links a:hover{
+color:var(--accent);
+}
+
+.footer-copy{
+font-size:0.8rem;
+color:var(--soft);
+text-align:center;
+max-width:520px;
+margin:0 auto;
+line-height:1.6;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+gap:0.7rem;
+font-size:0.6rem;
+}
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.books-grid{
+grid-template-columns:1fr;
+max-width:260px;
+}
+
+.about-wrapper{
+grid-template-columns:1fr;
+text-align:center;
+justify-items:center;
+}
+
+.about-text{
+text-align:center;
+max-width:520px;
+}
+
+}
+
+.connect-links a{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.connect-links i{
+font-size:1rem;
+}
+
+.footer-social{
+display:flex;
+justify-content:center;
+gap:1.2rem;
+margin-bottom:1.2rem;
+}
+
+.footer-social a{
+font-size:1.1rem;
+color:var(--soft);
+transition:0.3s;
+}
+
+.footer-social a:hover{
+color:var(--accent);
+transform:translateY(-2px);
+}
+
+.article{
+max-width:620px;
+margin:auto;
+font-size:1.15rem;
+line-height:2;
+}
+
+p{
+max-width:65ch;
+}
+
+a:focus{
+outline:2px solid var(--accent);
+outline-offset:3px;
+}
+
+::selection{
+background:var(--accent);
+color:white;
+}
+
+/* =========================
+ARTICLE READING STYLE
+========================= */
+
+.article{
+max-width:640px;
+margin:auto;
+font-family:'Cormorant Garamond',serif;
+font-size:1.25rem;
+line-height:2;
+}
+
+.article p{
+margin-bottom:1.4rem;
+}
+
+/* drop cap */
+
+.article p:first-child::first-letter{
+font-size:3.2rem;
+float:left;
+line-height:1;
+padding-right:6px;
+font-family:'Cormorant Garamond',serif;
+}
+
+.article p:hover{
+background:rgba(184,169,154,0.15);
+}
+
+/* MOBILE NAV */
+
+@media(max-width:768px){
+
+.hamburger{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:var(--bg1);
+flex-direction:column;
+align-items:center;
+padding:1.2rem 0;
+gap:1rem;
+
+max-height:0;
+overflow:hidden;
+transition:0.35s ease;
+}
+
+.nav-links.open{
+max-height:420px;
+}
+
+}
+
+.hero{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:4rem;
+align-items:center;
+}
+
+.hero-left h1{
+font-family:'Cormorant Garamond',serif;
+font-size:3.2rem;
+margin-bottom:0.6rem;
+}
+
+.hero-tagline{
+font-style:italic;
+color:var(--soft);
+margin-bottom:1rem;
+}
+
+.hero-intro{
+max-width:36ch;
+margin-bottom:1.6rem;
+}
+
+.hero-button{
+padding:10px 18px;
+border:1px solid var(--accent);
+border-radius:6px;
+text-decoration:none;
+color:var(--text);
+transition:0.25s;
+}
+
+.hero-button:hover{
+background:var(--accent);
+color:white;
+}
+
+.hero-right img{
+width:240px;
+height:300px;
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 20px 45px rgba(0,0,0,0.15);
+}
+
+/* MENU OVERLAY */
+
+.menu-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.35);
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+z-index:900;
+}
+
+.menu-overlay.open{
+opacity:1;
+pointer-events:auto;
+}
+
+/* MOBILE DRAWER FIX */
+
+@media(max-width:768px){
+
+.nav-drawer{
+width:220px;
+padding:4rem 1.5rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="scroll-progress"></div>
+
+<nav>
+
+<div class="nav-inner">
+
+<div class="logo">AASHI MALVIYA</div>
+
+<button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+<div class="nav-drawer" id="navDrawer">
+
+<a href="#home">Home</a>
+<a href="#writing">Writing</a>
+<a href="#featured">Featured</a>
+<a href="#publications">Publications</a>
+<a href="#bookshelf">Bookshelf</a>
+<a href="#notes">Notes</a>
+<a href="#commonplace">Commonplace</a>
+<a href="#letters">Letters</a>
+<a href="#now">Now</a>
+<a href="#about">About</a>
+<a href="#connect">Connect</a>
+
+<button class="theme-btn" onclick="toggleDark()">☾</button>
+
+</div>
+
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+<header id="home">
+
+<div class="hero-clean">
+
+<h1 class="hero-name">Aashi Malviya</h1>
+
+<p class="hero-quote">
+Everything that exists here<br>
+was once someone’s thought.
+</p>
+
+<div class="hero-divider"></div>
+
+<a href="#writing" class="hero-link">Start Reading</a>
+
+</div>
+
+</header>
+
+<section id="writing">
+
+<div class="container">
+
+<h2>Writing</h2>
+
+<p class="subtitle">
+Selected poems, essays, and fragments.
+</p>
+
+<!-- Hindi Poetry -->
+
+<div class="category">
+
+<h3>Hindi Poetry</h3>
+
+<ul class="writing-list">
+
+<li>
+<a href="writing/radha-krishna.html">कृष्ण और राधा — एक संवाद</a>
+</li>
+
+<li>
+<a href="writing/adhuri.html">अधूरी बातें</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- English Poetry -->
+
+<div class="category">
+
+<h3>English Poetry</h3>
+
+<ul class="writing-list">
+
+<li>
+<a href="writing/past-self.html">For the girl I used to be</a>
+</li>
+
+<li>
+<a href="writing/midnightdraft.html">Midnight Draft</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- Articles -->
+
+<div class="category">
+
+<h3>Articles</h3>
+
+<ul class="writing-list">
+
+<li>
+<a href="writing/cities1.html">Growing Up Across Cities — Part 1</a>
+</li>
+
+<li>
+<a href="twelfthfail.html">Twelfth Fail — Reflections</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- Stories -->
+
+<div class="category">
+
+<h3>Stories</h3>
+
+<ul class="writing-list">
+
+<li>
+<a href="writing/christmas.html">The Christmas Present</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="featured">
+
+<div class="container">
+
+<h2>Featured Writing</h2>
+
+<p class="subtitle">
+A piece I recommend starting with.
+</p>
+
+<div class="feature-card">
+<a href="https://medium.com/@aashimalviyawrites/growing-up-across-cities-part-1-indore-where-it-all-began-371fe0808a35">
+Growing Up Across Cities — Part 1
+</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="publications">
+
+<div class="container">
+
+<h2>Publications</h2>
+
+<p class="subtitle">
+Places where my words have appeared beyond this website.
+</p>
+
+<div class="pub-wrapper">
+
+<!-- FREE PRESS -->
+
+<div class="pub-item">
+
+<button class="pub-title" onclick="togglePub(this)">
+The Free Press Journal
+</button>
+
+<div class="pub-content">
+
+<p class="pub-desc">
+Three of my works appeared in the <em>Reader’s Corner</em> section of
+The Free Press Journal — two articles and one poem.
+</p>
+
+<div class="pub-images">
+
+<img src="fpj_article1.jpg" alt="Free Press Article 1"loading="lazy">
+<img src="fpj_article2.jpg" alt="Free Press Article 2"loading="lazy">
+<img src="fpj_poem.jpg" alt="Free Press Poem"loading="lazy">
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BLUE STAR -->
+
+<div class="pub-item">
+
+<button class="pub-title" onclick="togglePub(this)">
+Blue Star Publications Anthologies
+</button>
+
+<div class="pub-content">
+
+<p class="pub-desc">
+My poems and short reflections appear in several anthologies published
+by Blue Star Publications.
+</p>
+
+<ul class="anthology-list">
+
+<li>Where Darkness Meets Dawn</li>
+<li>Palette of Feelings</li>
+<li>Secret Santa: Gift of Christmas</li>
+<li>Petals of Thoughts</li>
+<li>Whispers of the Soul</li>
+
+</ul>
+
+<div class="pub-images">
+
+<img src="anthology1.jpg" alt="Anthology Book"loading="lazy">
+<img src="anthology2.jpg" alt="Anthology Book"loading="lazy">
+<img src="anthology3.jpg" alt="Anthology Book"loading="lazy">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="bookshelf">
+
+<div class="container">
+
+<h2>Bookshelf</h2>
+
+<p class="subtitle">
+Books that stayed with me long after the last page.
+</p>
+
+<div class="books-grid">
+
+<div class="book" onclick="toggleQuote(this)">
+<img src="book/matilda.jpg" alt="Matilda"loading="lazy">
+<h4>Matilda</h4>
+<small>Roald Dahl</small>
+<div class="book-quote">
+“Somewhere inside all of us is the power to change the world.”
+</div>
+</div>
+
+<div class="book" onclick="toggleQuote(this)">
+<img src="book/ikigai.jpg" alt="Ikigai"loading="lazy">
+<h4>Ikigai</h4>
+<small>Francesc Miralles & Hector Garcia</small>
+<div class="book-quote">
+“The happiness of always being busy.”
+</div>
+</div>
+
+<div class="book" onclick="toggleQuote(this)">
+<img src="book/thepalaceofillusions.jpg" alt="The Palace of Illusions"loading="lazy">
+<h4>The Palace of Illusions</h4>
+<small>Chitra Banerjee Divakaruni</small>
+<div class="book-quote">
+“I was not born to disappear behind someone else's story.”
+</div>
+</div>
+
+<div class="book" onclick="toggleQuote(this)">
+<img src="book/athousandsplendidsuns.jpg" alt="A Thousand Splendid Suns"loading="lazy">
+<h4>A Thousand Splendid Suns</h4>
+<small>Khaled Hosseini</small>
+<div class="book-quote">
+“A society has no chance of success if its women are uneducated.”
+</div>
+</div>
+
+<div class="book" onclick="toggleQuote(this)">
+<img src="book/somethinghappenedonthewaytoheaven.jpg" alt="Something Happened on the Way to Heaven"loading="lazy">
+<h4>Something Happened on the Way to Heaven</h4>
+<small>Various Authors · ed. Sudha Murty</small>
+<div class="book-quote">
+“There is always a tomorrow.”
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="notes">
+
+<div class="container">
+
+<h2>Notes</h2>
+
+<p class="subtitle">
+Small thoughts that refused to remain unwritten.
+</p>
+
+<div class="now-wrapper">
+
+<div class="now-item">
+<h3>On Silence</h3>
+<p>
+Sometimes the most meaningful part of a conversation is the pause that comes after the last word.
+</p>
+</div>
+
+<div class="now-item">
+<h3>On Railway Stations</h3>
+<p>
+A railway station is a place where everyone is either leaving something behind or moving toward something unknown.
+</p>
+</div>
+
+<div class="now-item">
+<h3>On Stories</h3>
+<p>
+Every story begins long before it is written — usually in a moment that seems ordinary at the time.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="commonplace">
+
+<div class="container">
+
+<h2>Commonplace Book</h2>
+
+<p class="subtitle">
+Lines from books and writers that stayed with me.
+</p>
+
+<div class="now-wrapper">
+
+<div class="now-item">
+<h3>On Courage</h3>
+<p>
+“Somewhere inside all of us is the power to change the world.”
+<br>— Roald Dahl
+</p>
+</div>
+
+<div class="now-item">
+<h3>On Education</h3>
+<p>
+“A society has no chance of success if its women are uneducated.”
+<br>— Khaled Hosseini
+</p>
+</div>
+
+<div class="now-item">
+<h3>On Purpose</h3>
+<p>
+“Your ikigai is at the intersection of what you love,
+what you are good at, and what the world needs.”
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="letters">
+
+<div class="container">
+
+<h2>Letters</h2>
+
+<p class="subtitle">
+Small letters written to people, places, and ideas.
+</p>
+
+<div class="now-wrapper">
+
+<div class="now-item">
+<h3>Letter to a City</h3>
+<p>
+Dear City,<br><br>
+You taught me that crowds can still leave room for quiet thoughts.
+Every street carries a story if someone stops long enough to listen.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Letter to Books</h3>
+<p>
+Dear Books,<br><br>
+You were the first place where I realised that thoughts could travel
+farther than footsteps.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Letter to My Future Self</h3>
+<p>
+Dear Future Me,<br><br>
+I hope you still pause at railway stations and wonder
+where every train is going.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="now">
+
+<div class="container">
+
+<h2>Now</h2>
+
+<p class="subtitle">
+A quiet record of what currently occupies my mind and days.
+</p>
+
+<div class="now-wrapper">
+
+<div class="now-item">
+<h3>Reading</h3>
+<p>
+Currently reading <em>Wings of Fire</em> by A. P. J. Abdul Kalam.
+The story of curiosity, discipline, and the long journey from dreams
+to reality.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Recently Finished</h3>
+<p>
+<em>Matilda</em> by Roald Dahl and <em>The Palace of Illusions</em> by
+Chitra Banerjee Divakaruni — two books that reminded me how powerful
+stories and imagination can be.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Next on My List</h3>
+<p>
+Planning to read <em>Animal Farm</em> and <em>Sapiens</em>.
+Both seem to explore how societies, power, and human choices shape
+the world we live in.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Writing</h3>
+<p>
+Working on Part 2 of <em>Growing Up Across Cities</em>,
+along with a short novella set during a train journey.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Thinking About</h3>
+<p>
+How ordinary places — railway platforms, classrooms,
+quiet afternoons — slowly turn into stories once we begin
+to notice them carefully.
+</p>
+</div>
+
+<div class="now-item">
+<h3>Last Updated</h3>
+<p>
+March 2026
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container about-wrapper">
+
+<div class="about-photo">
+<img src="aashi.jpg" alt="Aashi Malviya"loading="lazy">
+</div>
+
+<div class="about-text">
+
+<h2>About</h2>
+
+<p>
+I write because I cannot live quietly with my thoughts. They insist on becoming lines, and the lines insist on becoming stories.
+</p>
+
+<p>
+I’m a student at PM SHRI Kendriya Vidyalaya, where my words first learned how to leave my notebook and find their way into the world. Twice, my writing appeared in the Reader’s Corner of The Free Press Journal, where my words first stepped beyond my notebook and into print.
+</p>
+
+<p>
+I move between shayari and prose, between Hindi and English, between memory and imagination.
+</p>
+
+<p>
+I believe in small moments—the pause before a reply, the silence after a song, the look someone gives when they don’t have the right words.
+</p>
+
+<p class="closing-line">
+If you find something here that feels like your own thought, then my work has done what it was meant to do.
+</p>
+
+<p>
+— Aashi Malviya
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="connect">
+
+<div class="container connect">
+
+<h2>Connect</h2>
+
+<p class="connect-subtitle">
+If my words resonate with you, feel free to reach out.
+</p>
+
+<div class="connect-links">
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=aashimalviyawritera@gmail.com&su=Message%20from%20your%20website"
+target="_blank" rel="noopener">
+<i class="fa-solid fa-envelope"></i> Email
+</a>
+
+<a href="https://medium.com/@aashimalviyawrites"
+target="_blank" rel="noopener">
+<i class="fa-brands fa-medium"></i> Medium
+</a>
+
+<a href="https://www.linkedin.com/in/aashi-malviya-writes"
+target="_blank" rel="noopener">
+<i class="fa-brands fa-linkedin"></i> LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-inner">
+
+<p class="footer-name">
+Aashi Malviya
+</p>
+
+<p class="footer-tagline">
+Poetry • Essays • Reflections
+</p>
+
+<div class="footer-social">
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=aashimalviyawritera@gmail.com"
+target="_blank" rel="noopener">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://medium.com/@aashimalviyawrites"
+target="_blank" rel="noopener">
+<i class="fa-brands fa-medium"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/aashi-malviya-writes"
+target="_blank" rel="noopener">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+</div>
+
+<div class="footer-links">
+
+<a href="#writing">Writing</a>
+<a href="#bookshelf">Bookshelf</a>
+<a href="#about">About</a>
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=aashimalviyawritera@gmail.com&su=Message%20from%20your%20website"
+target="_blank">
+Email
+</a>
+
+</div>
+
+<p class="footer-copy">
+© 2026 Aashi Malviya — All rights reserved.<br>
+No part of this website or its content may be reproduced without permission.
+</p>
+</div>
+
+</footer>
+
+<script>
+
+function toggleDark(){
+
+const btn = document.querySelector(".theme-btn");
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+localStorage.setItem("theme","dark");
+btn.textContent = "☀";
+}
+else{
+localStorage.setItem("theme","light");
+btn.textContent = "☾";
+}
+
+}
+
+/* Load saved theme */
+ if(localStorage.getItem("theme")==="dark"){
+document.body.classList.add("dark");
+document.querySelector(".theme-btn").textContent="☀";
+}
+
+
+const sections=document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+sections.forEach(sec=>{
+observer.observe(sec);
+});
+
+function togglePub(btn){
+let content = btn.nextElementSibling;
+content.classList.toggle("open");
+}
+
+function toggleQuote(book){
+let quote = book.querySelector(".book-quote");
+quote.classList.toggle("open");
+}
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.querySelector("nav");
+
+if(window.scrollY>50){
+nav.classList.add("scrolled");
+}else{
+nav.classList.remove("scrolled");
+}
+
+});
+
+window.addEventListener("scroll",()=>{
+let scrollTop = document.documentElement.scrollTop;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+let scrolled = (scrollTop / height) * 100;
+
+document.querySelector(".scroll-progress").style.width = scrolled + "%";
+});
+
+function toggleMenu(){
+
+const drawer = document.getElementById("navDrawer");
+const overlay = document.getElementById("menuOverlay");
+
+drawer.classList.toggle("open");
+overlay.classList.toggle("open");
+
+}
+
+document.querySelectorAll(".nav-drawer a").forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("navDrawer").classList.remove("open");
+document.getElementById("menuOverlay").classList.remove("open");
+});
+});
+
+</script>
+
+</body>
+</html>
