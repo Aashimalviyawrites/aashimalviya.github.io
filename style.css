@@ -53,9 +53,7 @@ background-color:var(--bg1);
 color:var(--text);
 line-height:1.8;
 
-transition:
-background 0.4s ease,
-color 0.4s ease;
+transition:background 0.4s ease,color 0.4s ease;
 }
 
 body.dark{
@@ -63,6 +61,11 @@ background:
 linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 background-color:var(--bg1);
+}
+
+a{
+color:inherit;
+text-decoration:none;
 }
 
 /* =========================
@@ -113,10 +116,6 @@ letter-spacing:0.15em;
 font-size:1rem;
 }
 
-/* =========================
-NAV MENU
-========================= */
-
 .hamburger{
 background:none;
 border:none;
@@ -125,10 +124,14 @@ cursor:pointer;
 color:var(--text);
 }
 
+/* =========================
+NAV DRAWER
+========================= */
+
 .nav-drawer{
 position:fixed;
 top:0;
-right:-280px;
+right:-260px;
 width:220px;
 height:100vh;
 background:var(--bg1);
@@ -141,28 +144,18 @@ transition:0.35s ease;
 z-index:999;
 }
 
-body.dark .nav-drawer{
-background:#1a1a1a;
-}
-
 .nav-drawer.open{
 right:0;
 }
 
 .nav-drawer a{
-text-decoration:none;
 font-size:0.9rem;
 letter-spacing:0.1em;
-color:var(--text);
 }
 
 .nav-drawer a:hover{
 color:var(--accent);
 }
-
-/* =========================
-THEME BUTTON
-========================= */
 
 .theme-btn{
 background:none;
@@ -181,7 +174,7 @@ LAYOUT
 ========================= */
 
 .container{
-max-width:760px;
+max-width:680px;
 margin:auto;
 padding:0 1.5rem;
 }
@@ -226,7 +219,7 @@ padding:10rem 1.5rem 6rem;
 font-family:'Cormorant Garamond',serif;
 font-size:3.2rem;
 letter-spacing:0.05em;
-margin-bottom:2.2rem;
+margin-bottom:2rem;
 }
 
 .hero-quote{
@@ -235,7 +228,7 @@ font-size:1.9rem;
 font-style:italic;
 color:var(--soft);
 line-height:1.7;
-margin-bottom:2.5rem;
+margin-bottom:2.2rem;
 }
 
 .hero-divider{
@@ -246,8 +239,6 @@ margin:2rem auto;
 }
 
 .hero-link{
-text-decoration:none;
-color:var(--text);
 font-size:0.85rem;
 letter-spacing:0.15em;
 text-transform:uppercase;
@@ -278,7 +269,7 @@ margin-bottom:3rem;
 }
 
 /* =========================
-WRITING LIST
+WRITING
 ========================= */
 
 .category{
@@ -307,9 +298,8 @@ border-left:2px solid var(--accent);
 padding-left:18px;
 }
 
-.writing-list a{
-text-decoration:none;
-color:var(--text);
+.writing-list a:hover{
+color:var(--accent);
 }
 
 /* =========================
@@ -326,14 +316,12 @@ margin:auto;
 }
 
 .feature-card a{
-text-decoration:none;
-color:var(--text);
 font-family:'Cormorant Garamond',serif;
 font-size:1.3rem;
 }
 
 /* =========================
-BOOKS
+BOOKSHELF
 ========================= */
 
 .books-grid{
@@ -341,7 +329,7 @@ display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:2.5rem;
 max-width:520px;
-margin:3rem auto;
+margin:3rem auto 0 auto;
 }
 
 .book{
@@ -372,73 +360,20 @@ display:block;
 color:var(--soft);
 }
 
-/* =========================
-ARTICLE TEXT
-========================= */
-
-.article{
-max-width:680px;
-margin:auto;
-}
-
-.article p{
+.book-quote{
+max-height:0;
+opacity:0;
+overflow:hidden;
 font-family:'Cormorant Garamond',serif;
-font-size:1.25rem;
-line-height:2;
-letter-spacing:0.02em;
-margin-bottom:1.4rem;
-}
-
-.article p:first-child::first-letter{
-font-size:3rem;
-float:left;
-line-height:1;
-padding-right:6px;
-font-family:'Cormorant Garamond',serif;
-}
-
-/* =========================
-POETRY
-========================= */
-
-.poem{
-font-family:'Libre Baskerville',serif;
-font-size:1.25rem;
-line-height:2.2;
-white-space:pre-line;
-margin-top:2rem;
-max-width:520px;
-margin-left:auto;
-margin-right:auto;
-}
-
-/* =========================
-META + SIGNATURE
-========================= */
-
-.meta{
-color:var(--soft);
-margin-bottom:2rem;
-text-align:center;
-}
-
-.signature{
-margin-top:2rem;
 font-style:italic;
-text-align:right;
+font-size:0.9rem;
+color:var(--soft);
+transition:0.4s ease;
 }
 
-/* =========================
-BACK LINK
-========================= */
-
-.back{
-display:inline-block;
-margin-top:2.5rem;
-text-decoration:none;
-font-size:0.9rem;
-letter-spacing:0.05em;
-color:var(--accent);
+.book-quote.open{
+max-height:80px;
+opacity:1;
 }
 
 /* =========================
@@ -460,6 +395,10 @@ border-radius:12px;
 box-shadow:0 14px 28px rgba(0,0,0,0.15);
 }
 
+.about-text p{
+margin-bottom:1.5rem;
+}
+
 /* =========================
 CONNECT
 ========================= */
@@ -473,11 +412,11 @@ display:flex;
 justify-content:center;
 gap:2rem;
 flex-wrap:wrap;
+font-size:0.9rem;
 }
 
-.connect-links a{
-text-decoration:none;
-color:var(--text);
+.connect-links a:hover{
+color:var(--accent);
 }
 
 /* =========================
@@ -494,6 +433,7 @@ margin-top:4rem;
 .footer-inner{
 max-width:700px;
 margin:auto;
+text-align:center;
 padding:0 1.5rem;
 }
 
@@ -508,59 +448,40 @@ color:var(--soft);
 margin-bottom:1.2rem;
 }
 
-.footer-links{
-display:flex;
-justify-content:center;
-gap:1.5rem;
-flex-wrap:wrap;
-margin-bottom:1rem;
-}
-
-.footer-links a{
-text-decoration:none;
-color:var(--soft);
-font-size:0.9rem;
-}
-
-.footer-links a:hover{
-color:var(--text);
-}
-
 .footer-copy{
 font-size:0.8rem;
 color:var(--soft);
-line-height:1.6;
+max-width:520px;
+margin:auto;
 }
 
 /* =========================
-SELECTION
+ARTICLE STYLE
 ========================= */
 
-::selection{
-background:var(--accent);
-color:white;
+.article{
+max-width:640px;
+margin:auto;
+font-family:'Cormorant Garamond',serif;
+font-size:1.25rem;
+line-height:2;
 }
 
-/* =========================
-OVERLAY
-========================= */
-
-.menu-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.3);
-opacity:0;
-pointer-events:none;
-transition:0.3s;
-z-index:900;
+.article p{
+margin-bottom:1.4rem;
 }
 
-.menu-overlay.open{
-opacity:1;
-pointer-events:auto;
+.article p:first-child::first-letter{
+font-size:3.2rem;
+float:left;
+line-height:1;
+padding-right:6px;
+font-family:'Cormorant Garamond',serif;
+}
+
+p{
+max-width:65ch;
+margin:auto;
 }
 
 /* =========================
@@ -577,6 +498,18 @@ max-width:260px;
 .about-wrapper{
 grid-template-columns:1fr;
 text-align:center;
+}
+
+.about-photo img{
+margin:auto;
+}
+
+.hero-name{
+font-size:2.4rem;
+}
+
+.hero-quote{
+font-size:1.4rem;
 }
 
 }
