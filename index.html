@@ -85,9 +85,295 @@
   </div>
 </header>
 
-<main>
-  <!-- your sections stay the same -->
-</main>
+  <main>
+    <section id="writing">
+      <div class="container">
+        <h2>Writing</h2>
+        <p class="subtitle">Selected poems, essays, and fragments.</p>
+
+        <!-- Hindi Poetry -->
+        <div class="category">
+          <h3>Hindi Poetry</h3>
+          <ul class="writing-list">
+            <li>
+              <a href="radha-krishna.html">कृष्ण और राधा — एक संवाद</a>
+            </li>
+            <li>
+              <a href="adhuri.html">अधूरी बातें</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- English Poetry -->
+        <div class="category">
+          <h3>English Poetry</h3>
+          <ul class="writing-list">
+            <li>
+              <a href="past-self.html">For the girl I used to be</a>
+            </li>
+            <li>
+              <a href="midnightdraft.html">Midnight Draft</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Articles -->
+        <div class="category">
+          <h3>Articles</h3>
+          <ul class="writing-list">
+            <li>
+              <a href="cities1.html">Growing Up Across Cities — Part 1</a>
+            </li>
+            <li>
+              <a href="twelfthfail.html">Twelfth Fail — Reflections</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Stories -->
+        <div class="category">
+          <h3>Stories</h3>
+          <ul class="writing-list">
+            <li>
+              <a href="christmas.html">The Christmas Present</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured">
+      <div class="container">
+        <h2>Featured Writing</h2>
+        <p class="subtitle">A piece I recommend starting with.</p>
+        <div class="feature-card">
+          <a href="cities1.html">Growing Up Across Cities — Part 1</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2>Publications</h2>
+        <p class="subtitle">Places where my words have appeared beyond this website.</p>
+        <div class="pub-wrapper">
+          <!-- FREE PRESS -->
+          <div class="pub-item">
+            <button class="pub-title" onclick="togglePub(this)">
+              The Free Press Journal
+            </button>
+            <div class="pub-content">
+              <p class="pub-desc">
+                Three of my works appeared in the <em>Reader’s Corner</em> section of The Free Press Journal — two articles and one poem.
+              </p>
+              <div class="pub-images">
+                <img src="fpj_article1.jpg" alt="Free Press Article 1" loading="lazy">
+                <img src="fpj_article2.jpg" alt="Free Press Article 2" loading="lazy">
+                <img src="fpj_poem.jpg" alt="Free Press Poem" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- BLUE STAR -->
+          <div class="pub-item">
+            <button class="pub-title" onclick="togglePub(this)">
+              Blue Star Publications Anthologies
+            </button>
+            <div class="pub-content">
+              <p class="pub-desc">
+                My poems and short reflections appear in several anthologies published by Blue Star Publications.
+              </p>
+              <ul class="anthology-list">
+                <li>Where Darkness Meets Dawn</li>
+                <li>Palette of Feelings</li>
+                <li>Secret Santa: Gift of Christmas</li>
+                <li>Petals of Thoughts</li>
+              </ul>
+              <div class="pub-images">
+                <img src="anthology1.jpg" alt="Anthology Book" loading="lazy">
+                <img src="anthology2.jpg" alt="Anthology Book" loading="lazy">
+                <img src="anthology3.jpg" alt="Anthology Book" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bookshelf">
+      <div class="container">
+        <h2>Bookshelf</h2>
+        <p class="subtitle">Books that stayed with me long after the last page.</p>
+        <div class="books-grid">
+          <div class="book" onclick="toggleQuote(this)">
+            <img src="matilda.jpg" alt="Cover of Matilda by Roald Dahl" loading="lazy">
+            <h4>Matilda</h4>
+            <small>Roald Dahl</small>
+            <div class="book-quote">“Somewhere inside all of us is the power to change the world.”</div>
+          </div>
+
+          <div class="book" onclick="toggleQuote(this)">
+            <img src="ikigai.jpg" alt="Cover of Ikigai by Francesc Miralles & Hector Garcia" loading="lazy">
+            <h4>Ikigai</h4>
+            <small>Francesc Miralles & Hector Garcia</small>
+            <div class="book-quote">“The happiness of always being busy.”</div>
+          </div>
+
+          <div class="book" onclick="toggleQuote(this)">
+            <img src="thepalaceofillusions.jpg" alt="Cover of The Palace of Illusions by Chitra Banerjee Divakaruni" loading="lazy">
+            <h4>The Palace of Illusions</h4>
+            <small>Chitra Banerjee Divakaruni</small>
+            <div class="book-quote">“I was not born to disappear behind someone else's story.”</div>
+          </div>
+
+          <div class="book" onclick="toggleQuote(this)">
+            <img src="athousandsplendidsuns.jpg" alt="Cover of A Thousand Splendid Suns by Khaled Hosseini" loading="lazy">
+            <h4>A Thousand Splendid Suns</h4>
+            <small>Khaled Hosseini</small>
+            <div class="book-quote">“A society has no chance of success if its women are uneducated.”</div>
+          </div>
+
+          <div class="book" onclick="toggleQuote(this)">
+            <img src="somethinghappenedonthewaytoheaven.jpg" alt="Cover of Something Happened on the Way to Heaven by Various Authors ·. edited by Sudha Murty" loading="lazy">
+            <h4>Something Happened on the Way to Heaven</h4>
+            <small>Various Authors · ed. Sudha Murty</small>
+            <div class="book-quote">“There is always a tomorrow.”</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes">
+      <div class="container">
+        <h2>Notes</h2>
+        <p class="subtitle">Small thoughts that refused to remain unwritten.</p>
+        <div class="now-wrapper">
+          <div class="now-item">
+            <h3>On Silence</h3>
+            <p>Sometimes the most meaningful part of a conversation is the pause that comes after the last word.</p>
+          </div>
+          <div class="now-item">
+            <h3>On Railway Stations</h3>
+            <p>A railway station is a place where everyone is either leaving something behind or moving toward something unknown.</p>
+          </div>
+          <div class="now-item">
+            <h3>On Stories</h3>
+            <p>Every story begins long before it is written — usually in a moment that seems ordinary at the time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commonplace">
+      <div class="container">
+        <h2>Commonplace Book</h2>
+        <p class="subtitle">Lines from books and writers that stayed with me.</p>
+        <div class="now-wrapper">
+          <div class="now-item">
+            <h3>On Courage</h3>
+            <p>“Somewhere inside all of us is the power to change the world.” <br>— Roald Dahl</p>
+          </div>
+          <div class="now-item">
+            <h3>On Education</h3>
+            <p>“A society has no chance of success if its women are uneducated.” <br>— Khaled Hosseini</p>
+          </div>
+          <div class="now-item">
+            <h3>On Purpose</h3>
+            <p>“Your ikigai is at the intersection of what you love, what you are good at, and what the world needs.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="letters">
+      <div class="container">
+        <h2>Letters</h2>
+        <p class="subtitle">Small letters written to people, places, and ideas.</p>
+        <div class="now-wrapper">
+          <div class="now-item">
+            <h3>Letter to a City</h3>
+            <p>Dear City,<br><br> You taught me that crowds can still leave room for quiet thoughts. Every street carries a story if someone stops long enough to listen.</p>
+          </div>
+          <div class="now-item">
+            <h3>Letter to Books</h3>
+            <p>Dear Books,<br><br> You were the first place where I realised that thoughts could travel farther than footsteps.</p>
+          </div>
+          <div class="now-item">
+            <h3>Letter to My Future Self</h3>
+            <p>Dear Future Me,<br><br> I hope you still pause at railway stations and wonder where every train is going.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="now">
+      <div class="container">
+        <h2>Now</h2>
+        <p class="subtitle">A quiet record of what currently occupies my mind and days.</p>
+        <div class="now-wrapper">
+          <div class="now-item">
+            <h3>Reading</h3>
+            <p>Currently reading <em>Wings of Fire</em> by A. P. J. Abdul Kalam. The story of curiosity, discipline, and the long journey from dreams to reality.</p>
+          </div>
+          <div class="now-item">
+            <h3>Recently Finished</h3>
+            <p><em>Matilda</em> by Roald Dahl and <em>The Palace of Illusions</em> by Chitra Banerjee Divakaruni — two books that reminded me how powerful stories and imagination can be.</p>
+          </div>
+          <div class="now-item">
+            <h3>Next on My List</h3>
+            <p>Planning to read <em>Animal Farm</em> and <em>Sapiens</em>. Both seem to explore how societies, power, and human choices shape the world we live in.</p>
+          </div>
+          <div class="now-item">
+            <h3>Writing</h3>
+            <p>Working on Part 2 of <em>Growing Up Across Cities</em>, along with a short novella set during a train journey.</p>
+          </div>
+          <div class="now-item">
+            <h3>Thinking About</h3>
+            <p>How ordinary places — railway platforms, classrooms, quiet afternoons — slowly turn into stories once we begin to notice them carefully.</p>
+          </div>
+          <div class="now-item">
+            <h3>Last Updated</h3>
+            <p>March 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-wrapper">
+        <div class="about-photo">
+          <img src="aashi.jpg" alt="Portrait of writer Aashi Malviya" loading="lazy">
+        </div>
+        <div class="about-text">
+          <h2>About</h2>
+          <p>I write because I cannot live quietly with my thoughts. They insist on becoming lines, and the lines insist on becoming stories.</p>
+          <p>I’m a student at PM SHRI Kendriya Vidyalaya, where my words first learned how to leave my notebook and find their way into the world. Twice, my writing appeared in the Reader’s Corner of The Free Press Journal, where my words first stepped beyond my notebook and into print.</p>
+          <p>I move between shayari and prose, between Hindi and English, between memory and imagination.</p>
+          <p>I believe in small moments—the pause before a reply, the silence after a song, the look someone gives when they don’t have the right words.</p>
+          <p class="closing-line">If you find something here that feels like your own thought, then my work has done what it was meant to do.</p>
+          <p>— Aashi Malviya</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect">
+      <div class="container connect">
+        <h2>Connect</h2>
+        <p class="connect-subtitle">If something here resonates, feel free to reach out.</p>
+        <div class="connect-links">
+          <a href="mailto:aashimalviyawritera@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+          <a href="https://medium.com/@aashimalviyawrites" target="_blank" rel="noopener">
+            <i class="fa-brands fa-medium"></i> Medium
+          </a>
+          <a href="https://www.linkedin.com/in/aashi-malviya-writes" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
 <footer>
   <div class="footer-inner">
@@ -128,3 +414,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+...
