@@ -1,3 +1,4 @@
+/* style.css */
 /* =========================
 ROOT COLORS
 ========================= */
@@ -207,9 +208,17 @@ LAYOUT
 
 main section{
   padding:8rem 0;
+}
+
+.js-enabled main section{
   opacity:0;
   transform:translateY(40px);
   transition:0.8s ease;
+}
+
+.js-enabled main section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 main section.show{
