@@ -401,16 +401,73 @@ PUBLICATIONS
 }
 
 .pub-images{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:1rem;
-  margin-top:1rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.8rem;
+  align-items:center;
 }
 
 .pub-images img{
   width:100%;
   border-radius:10px;
   object-fit:cover;
+}
+
+.pub-image-card{
+  width:100%;
+  max-width:420px;
+  overflow:hidden;
+  border-radius:12px;
+  cursor:pointer;
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pub-image-card img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  border-radius:12px;
+  transition:transform 0.5s ease, filter 0.5s ease;
+}
+
+/* hover = lift */
+.pub-image-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 30px rgba(0,0,0,0.15);
+}
+
+/* subtle zoom */
+.pub-image-card:hover img{
+  transform:scale(1.04);
+  filter:brightness(0.95);
+}
+
+.pub-caption{
+  font-size:0.85rem;
+  color:var(--soft);
+  margin-top:0.6rem;
+  text-align:center;
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.35s ease;
+}
+
+.pub-image-card:hover + .pub-caption{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.pub-image-card{
+  aspect-ratio: 3/4;
+  background:var(--card);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.pub-image-card img{
+  max-height:100%;
+  width:auto;
 }
 
 /* =========================
