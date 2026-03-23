@@ -526,6 +526,18 @@ PUBLICATIONS
   pointer-events:auto;
 }
 
+.pub-content{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:0.4s ease;
+}
+
+.pub-content.open{
+  max-height:1000px;
+  opacity:1;
+}
+
 /* =========================
 BOOKSHELF
 ========================= */
