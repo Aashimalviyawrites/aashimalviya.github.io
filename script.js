@@ -1,14 +1,23 @@
+// Enable JS class for animations
 document.documentElement.classList.add("js-enabled");
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* =========================
+     THEME (persisted)
+  ========================= */
+
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme === "dark") {
     document.body.classList.add("dark");
-
     const btn = document.querySelector(".theme-btn");
     if (btn) btn.textContent = "☀";
   }
+
+  /* =========================
+     SECTION REVEAL
+  ========================= */
 
   const sections = document.querySelectorAll("main section");
 
@@ -20,10 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  sections.forEach((sec) => {
-    observer.observe(sec);
+  sections.forEach((sec) => observer.observe(sec));
+
+  /* =========================
+     NAV DRAWER LINK CLOSE
+  ========================= */
+
+  document.querySelectorAll(".nav-drawer a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.getElementById("navDrawer")?.classList.remove("open");
+      document.getElementById("menuOverlay")?.classList.remove("open");
+    });
   });
+
 });
+
+
+/* =========================
+   DARK MODE TOGGLE
+========================= */
 
 function toggleDark() {
   const btn = document.querySelector(".theme-btn");
@@ -39,21 +63,40 @@ function toggleDark() {
   }
 }
 
+
+/* =========================
+   PUBLICATION TOGGLE
+========================= */
+
 function togglePub(btn) {
-  let content = btn.nextElementSibling;
+  const content = btn.nextElementSibling;
+
   if (content) {
     content.classList.toggle("open");
   }
 }
 
+
+/* =========================
+   BOOK QUOTE TOGGLE
+========================= */
+
 function toggleQuote(book) {
-  let quote = book.querySelector(".book-quote");
+  const quote = book.querySelector(".book-quote");
+
   if (quote) {
     quote.classList.toggle("open");
   }
 }
 
+
+/* =========================
+   SCROLL EFFECTS
+========================= */
+
 window.addEventListener("scroll", () => {
+
+  // Navbar shrink effect
   const nav = document.querySelector("nav");
 
   if (nav) {
@@ -64,15 +107,22 @@ window.addEventListener("scroll", () => {
     }
   }
 
-  let scrollTop = document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (scrollTop / height) * 100;
+  // Scroll progress bar
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (scrollTop / height) * 100;
 
   const bar = document.querySelector(".scroll-progress");
   if (bar) {
     bar.style.width = scrolled + "%";
   }
+
 });
+
+
+/* =========================
+   NAV MENU TOGGLE
+========================= */
 
 function toggleMenu() {
   const drawer = document.getElementById("navDrawer");
@@ -84,9 +134,26 @@ function toggleMenu() {
   }
 }
 
-document.querySelectorAll(".nav-drawer a").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.getElementById("navDrawer")?.classList.remove("open");
-    document.getElementById("menuOverlay")?.classList.remove("open");
-  });
-});
+
+/* =========================
+   IMAGE VIEWER (PUBLICATIONS)
+========================= */
+
+function openImage(el) {
+  const viewer = document.getElementById("imageViewer");
+
+  // prevent multiple triggers
+  if (viewer.classList.contains("show")) return;
+
+  const img = el.querySelector("img").src;
+  const caption = el.querySelector(".pub-caption").innerText;
+
+  document.getElementById("viewerImg").src = img;
+  document.getElementById("viewerCaption").innerText = caption;
+
+  viewer.classList.add("show");
+}
+
+function closeImage() {
+  document.getElementById("imageViewer").classList.remove("show");
+}
