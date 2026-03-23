@@ -153,7 +153,7 @@
       </div>
     </section>
 
-    <section id="publications">
+<section id="publications">
 
 <div class="container">
 
@@ -166,7 +166,6 @@ Places where my words have appeared beyond this website.
 <div class="pub-wrapper">
 
 <!-- FREE PRESS -->
-
 <div class="pub-item">
 
 <button class="pub-title" onclick="togglePub(this)">
@@ -180,28 +179,42 @@ Three of my works appeared in the <em>Reader’s Corner</em> section of
 The Free Press Journal — two articles and one poem.
 </p>
 
-  <div class="pub-images">
+<div class="pub-images">
 
-  <div class="pub-entry">
+  <div class="pub-entry" onclick="openImage(this)">
     <div class="pub-image-card">
-      <img src="nooni.jpg" alt="Free Press Article">
+      <img src="nooni.jpg" alt="Nooni & Simple Joys">
     </div>
     <div class="pub-caption">Article — Nooni & Simple Joys</div>
   </div>
 
-  <div class="pub-entry">
+  <div class="pub-entry" onclick="openImage(this)">
     <div class="pub-image-card">
-      <img src="childhood.jpg" alt="Free Press Article">
+      <img src="childhood.jpg" alt="Childhood Reflections">
     </div>
     <div class="pub-caption">Article — Childhood Reflections</div>
   </div>
 
-  <div class="pub-entry">
+  <div class="pub-entry" onclick="openImage(this)">
     <div class="pub-image-card">
-      <img src="pastself.jpg" alt="Free Press Poem">
+      <img src="pastself.jpg" alt="For My Past Self">
     </div>
     <div class="pub-caption">Poem — For My Past Self</div>
   </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- IMAGE VIEWER -->
+<div id="imageViewer" onclick="closeImage()">
+  <img id="viewerImg" src="">
+  <p id="viewerCaption"></p>
 </div>
   
     <section id="bookshelf">
