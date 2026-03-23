@@ -470,6 +470,62 @@ PUBLICATIONS
   width:auto;
 }
 
+/* ===== ENTRY WRAPPER ===== */
+.pub-entry{
+  text-align:center;
+  cursor:pointer;
+}
+
+/* keep uniform preview size */
+.pub-image-card{
+  width:100%;
+  max-width:300px;   /* controlled preview size */
+  aspect-ratio:3/4;
+  margin:auto;
+}
+
+/* ===== CAPTION ALWAYS VISIBLE (discipline) ===== */
+.pub-caption{
+  font-size:0.85rem;
+  color:var(--soft);
+  margin-top:0.6rem;
+  opacity:1;
+  transform:none;
+}
+
+/* ===== IMAGE VIEWER (on click) ===== */
+#imageViewer{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s ease;
+  z-index:2000;
+}
+
+#imageViewer img{
+  max-width:90%;
+  max-height:80vh;
+  border-radius:10px;
+}
+
+#imageViewer p{
+  margin-top:1rem;
+  color:#ddd;
+  font-size:0.95rem;
+}
+
+/* active state */
+#imageViewer.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
 /* =========================
 BOOKSHELF
 ========================= */
