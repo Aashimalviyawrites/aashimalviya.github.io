@@ -811,21 +811,32 @@ ARTICLE / POEM PAGES
   display:block;
   width:max-content;
   margin:3rem auto 0 auto;
+
   padding:12px 22px;
+
   font-size:0.85rem;
   letter-spacing:0.12em;
   text-transform:uppercase;
+
   border:1px solid var(--accent);
   border-radius:8px;
+
   color:var(--accent);
-  transition:0.3s ease;
+  background:transparent;
+
+  transition:all 0.3s ease;
 }
 
+/* Hover */
 .back:hover{
   background:var(--accent);
   color:#fff;
+  transform:translateY(-2px);
 }
 
+.back:active{
+  transform:scale(0.97);
+}
 /* =========================
 MOBILE
 ========================= */
