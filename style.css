@@ -808,9 +808,22 @@ ARTICLE / POEM PAGES
 }
 
 .back{
-  display:inline-block;
-  margin-top:2rem;
+  display:block;
+  width:max-content;
+  margin:3rem auto 0 auto;
+  padding:12px 22px;
+  font-size:0.85rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  border:1px solid var(--accent);
+  border-radius:8px;
   color:var(--accent);
+  transition:0.3s ease;
+}
+
+.back:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
 /* =========================
