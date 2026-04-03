@@ -872,3 +872,27 @@ MOBILE
 .article-page{
   background:#f7f3ed;
 }
+
+.notes-grid{
+  display:grid;
+  gap:1.4rem;
+}
+
+.note-card{
+  background:var(--card);
+  border-radius:14px;
+  padding:1.4rem;
+  transition:0.3s ease;
+  cursor:default;
+}
+
+.note-card:hover{
+  transform:translateY(-4px);
+}
+
+.note-card p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;
+  line-height:1.9;
+  margin:0;
+}
